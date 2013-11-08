@@ -1,0 +1,25 @@
+<%= form_for(@bandname) do |f| %>
+  <% if @bandname.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bandname.errors.count, "error") %> prohibited this bandname from being saved:</h2>
+
+      <ul>
+      <% @bandname.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bandname %><br>
+    <%= f.text_field :bandname %>
+  </div>
+  <div class="field">
+    <%= f.label :albumname %><br>
+    <%= f.text_field :albumname %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

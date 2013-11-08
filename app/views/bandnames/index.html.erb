@@ -1,0 +1,29 @@
+<h1>Listing bandnames</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bandname</th>
+      <th>Albumname</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bandnames.each do |bandname| %>
+      <tr>
+        <td><%= bandname.bandname %></td>
+        <td><%= bandname.albumname %></td>
+        <td><%= link_to 'Show', bandname %></td>
+        <td><%= link_to 'Edit', edit_bandname_path(bandname) %></td>
+        <td><%= link_to 'Destroy', bandname, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bandname', new_bandname_path %>
